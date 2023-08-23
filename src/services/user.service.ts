@@ -26,8 +26,8 @@ export class UserService {
   findAll() {
     throw new Error('Method not implemented.');
   }
-  findOne(id: number) {
-    throw new Error('Method not implemented.');
+  findOne(id: string) {
+    return this.userRepository.findOne({ where: { id: id } });
   }
   updateUser(userId: string, updateData: UpdateUserDto): Promise<User> {
     return this.userRepository.updateUser(userId, updateData);
