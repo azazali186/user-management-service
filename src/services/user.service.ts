@@ -19,13 +19,6 @@ export class UserService {
     }
     return result;
   }
-
-  create(createUserDto: CreateUserDto) {
-    throw new Error('Method not implemented.');
-  }
-  findAll() {
-    throw new Error('Method not implemented.');
-  }
   findOne(id: string) {
     return this.userRepository.findOne({ where: { id: id } });
   }
