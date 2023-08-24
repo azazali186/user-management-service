@@ -2,7 +2,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: process.env.DB_PRIMARY_HOSTNAME,
+  host: 'postgres',
   port: parseInt(process.env.DB_PRIMARY_PORT),
   username: 'janny',
   password: 'Aj189628@',
