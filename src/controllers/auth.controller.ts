@@ -1,4 +1,6 @@
 import {
+  All,
+  BadRequestException,
   Body,
   Controller,
   Get,
@@ -39,5 +41,14 @@ export class AuthController {
   @Post('/login')
   login(@Body(ValidationPipe) loginDto: LoginDto) {
     return this.authService.login(loginDto);
+  }
+
+  // Fallback route
+  @All('*')
+  handleFallback() {
+    throw new BadRequestException({
+      statusCode: 400,
+      message: `bad request`,
+    });
   }
 }
